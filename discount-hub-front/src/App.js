@@ -18,9 +18,10 @@ function App() {
           Learn React
         </a>
         <iframe
+          title='hub'
           width="600"
           height="450"
-          style={{border: '0'}}
+          style={{ border: '0' }}
           loading="lazy"
           allowFullScreen={true}
           referrerPolicy="no-referrer-when-downgrade"
