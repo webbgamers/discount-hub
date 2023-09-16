@@ -38,18 +38,11 @@ function App() {
             <option value="30">30</option>
             <option value="40">40</option>
             <option value="50">50</option>
-            <option value="75">75</option>
             <option value="100">100</option>
-            <option value="150">150</option>
             <option value="200">200</option>
-            <option value="250">250</option>
             <option value="500">500</option>
-            <option value="750">750</option>
             <option value="1000">1000</option>
-            <option value="1500">1500</option>
             <option value="2000">2000</option>
-            <option value="2500">2500</option>
-            <option value="3000">3000</option>
           </select>
           <input type="submit" value="Submit" ></input>
         </form>
