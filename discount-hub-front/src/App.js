@@ -29,18 +29,21 @@ function App() {
             Learn React
           </a>
           <iframe
+            title='hub'
             width="600"
             height="450"
             style={{border: '0'}}
             loading="lazy"
             allowFullScreen={true}
             referrerPolicy="no-referrer-when-downgrade"
-            src="https://www.google.com/maps/embed/v1/place?{API_KEY}
-      &q=Space+Needle,Seattle+WA">
+            src={`https://www.google.com/maps/embed/v1/place?key=${process.env.REACT_APP_SECRET_CODE}
+    &q=25.7617° N, 80.1918° W`}
+              >
           </iframe>
           <LoginButton />
         </header>
       </div>
     );
+
 }
 export default App;

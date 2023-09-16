@@ -9,6 +9,7 @@ import './App.css';
 
 const root = createRoot(document.getElementById('root'));
 
+
 root.render(
   <Auth0Provider
     domain="dev-gbyvd7qxdl22rxt8.us.auth0.com"
