@@ -1,5 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
+console.log(process.env)
 
 function App() {
   return (
@@ -25,8 +26,8 @@ function App() {
           loading="lazy"
           allowFullScreen={true}
           referrerPolicy="no-referrer-when-downgrade"
-          src="https://www.google.com/maps/embed/v1/place?{API_KEY}
-    &q=Space+Needle,Seattle+WA">
+          src={`https://www.google.com/maps/embed/v1/place?key=${process.env.REACT_APP_SECRET_CODE}
+    &q=Space+Needle,Seattle+WA`}>
         </iframe>
       </header>
     </div>
