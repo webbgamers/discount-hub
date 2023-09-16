@@ -17,6 +17,16 @@ function App() {
         >
           Learn React
         </a>
+        <iframe
+          width="600"
+          height="450"
+          style={{border: '0'}}
+          loading="lazy"
+          allowFullScreen={true}
+          referrerPolicy="no-referrer-when-downgrade"
+          src="https://www.google.com/maps/embed/v1/place?{API_KEY}
+    &q=Space+Needle,Seattle+WA">
+        </iframe>
       </header>
     </div>
   );
