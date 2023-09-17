@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/discount-hub/static/css/main.c2672944.css",
+    "main.js": "/discount-hub/static/js/main.c01909ca.js",
+    "static/js/787.3b2085e1.chunk.js": "/discount-hub/static/js/787.3b2085e1.chunk.js",
+    "index.html": "/discount-hub/index.html",
+    "main.c2672944.css.map": "/discount-hub/static/css/main.c2672944.css.map",
+    "main.c01909ca.js.map": "/discount-hub/static/js/main.c01909ca.js.map",
+    "787.3b2085e1.chunk.js.map": "/discount-hub/static/js/787.3b2085e1.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.c2672944.css",
+    "static/js/main.c01909ca.js"
+  ]
+}
