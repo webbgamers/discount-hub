@@ -1,8 +1,9 @@
 import React from 'react';
-import './App.css';
+import './index.css';
 import { useAuth0 } from "@auth0/auth0-react";
 import {useState} from 'react';
 import Profile from './profile';
+import LogoutButton from './logout';
 
 const LoginButton = () => {
   const { loginWithRedirect } = useAuth0();
@@ -11,6 +12,7 @@ const LoginButton = () => {
 };
 
 function App() {
+  // eslint-disable-next-line
   const { loginWithRedirect } = useAuth0();
   const [zooms, setZoom] = useState(15)
 
@@ -29,13 +31,15 @@ function App() {
   }
 
     return (
-      <div className="App">
-        <header className="App-header">
-
-        <form onSubmit={(e) => {e.preventDefault();
+      <div class="bg-yellow-200 ">
+        <header class="bg-yellow">
+        <h1 class="text-3xl font-bold underline p-10 top-100">
+          Discount Hub!
+        </h1>
+        <form class=""onSubmit={(e) => {e.preventDefault();
           setZoom(zoom(document.getElementById('cars').value))}}>
-          <label>Select Distance:</label>
-          <select name="cars" id="cars">
+          <label class="px-5">Select Distance:</label>
+          <select class="rounded-lg px-2"name="cars" id="cars">
             <option value="1">1</option>
             <option value="5">5</option>
             <option value="10">10</option>
@@ -49,21 +53,23 @@ function App() {
             <option value="1000">1000</option>
             <option value="2000">2000</option>
           </select>
-          <input type="submit" value="Submit" ></input>
+          <input class="px-1 text-black bg-white rounded-md text-xs"type="submit" value="Submit"></input>
         </form>
 
           <iframe
+            class="rounded-lg absolute bottom-5 left-5"
             title='hub'
-            width="600"
-            height="450"
+            width="300"
+            height="300"
             style={{ border: '0' }}
             loading="lazy"
             allowFullScreen={true}
             referrerPolicy="no-referrer-when-downgrade"
-            src={`https://www.google.com/maps/embed/v1/place?key=${process.env.REACT_APP_SECRET_CODE}&q=41.2565° N, 95.9345° W&zoom=${zooms}`}>
+            src={`https://www.google.com/maps/embed/v1/place?key=AIzaSyDQpMrPDGqnMNwlTIfRA63ghbPn3O_UBTw&q=41.2565° N, 95.9345° W&zoom=${zooms}`}>
           </iframe>
-          <LoginButton />
-          <Profile />
+          <LoginButton class="px-5 text-black bg-white rounded-md text-xs" />
+          <Profile class="absolute top-0 right-0 bg-black"/>
+          <LogoutButton />
         </header>
       </div>
     );
