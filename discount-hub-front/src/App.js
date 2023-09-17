@@ -1,8 +1,17 @@
-import logo from './logo.svg';
+import React from 'react';
 import './App.css';
+import { useAuth0 } from "@auth0/auth0-react";
 import {useState} from 'react';
+import Profile from './profile';
+
+const LoginButton = () => {
+  const { loginWithRedirect } = useAuth0();
+
+  return <button onClick={() => loginWithRedirect()}>Log In</button>;
+};
 
 function App() {
+  const { loginWithRedirect } = useAuth0();
   const [zooms, setZoom] = useState(15)
 
   let zoom = (input) => {
@@ -19,13 +28,9 @@ function App() {
     else { return 15 }
   }
 
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
+    return (
+      <div className="App">
+        <header className="App-header">
 
         <form onSubmit={(e) => {e.preventDefault();
           setZoom(zoom(document.getElementById('cars').value))}}>
@@ -47,28 +52,21 @@ function App() {
           <input type="submit" value="Submit" ></input>
         </form>
 
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-        <iframe
-          title='hub'
-          width="600"
-          height="450"
-          style={{ border: '0' }}
-          loading="lazy"
-          allowFullScreen={true}
-          referrerPolicy="no-referrer-when-downgrade"
-          src={`https://www.google.com/maps/embed/v1/place?key=${process.env.REACT_APP_SECRET_CODE}
-    &q=41.2565° N, 95.9345° W&zoom=${zooms}`}>
-        </iframe>
-      </header>
-    </div>
-  );
+          <iframe
+            title='hub'
+            width="600"
+            height="450"
+            style={{ border: '0' }}
+            loading="lazy"
+            allowFullScreen={true}
+            referrerPolicy="no-referrer-when-downgrade"
+            src={`https://www.google.com/maps/embed/v1/place?key=${{string}}&q=41.2565° N, 95.9345° W&zoom=${zooms}`}>
+          </iframe>
+          <LoginButton />
+          <Profile />
+        </header>
+      </div>
+    );
 }
 
 export default App;
