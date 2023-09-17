@@ -60,7 +60,7 @@ function App() {
             loading="lazy"
             allowFullScreen={true}
             referrerPolicy="no-referrer-when-downgrade"
-            src={`https://www.google.com/maps/embed/v1/place?key=${{string}}&q=41.2565° N, 95.9345° W&zoom=${zooms}`}>
+            src={`https://www.google.com/maps/embed/v1/place?key=${process.env.REACT_APP_SECRET_CODE}&q=41.2565° N, 95.9345° W&zoom=${zooms}`}>
           </iframe>
           <LoginButton />
           <Profile />
